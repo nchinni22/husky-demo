@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "ng test -- --watch=false --code-coverage",
     "lint": "ng lint",
     "prepare": "husky install",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json,html}' --config ./.prettierrc.json --ignore-path ./.prettierignore",
@@ -55,8 +55,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,ts,scss,md,html,json}": [
-      "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json,html}' --config ./.prettierrc.json --ignore-path ./.prettierignore",
-      "eslint --fix"
+      "eslint --fix",
+      "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json,html}' --config ./.prettierrc.json --ignore-path ./.prettierignore"
     ]
   }
 }
